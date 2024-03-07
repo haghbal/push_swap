@@ -6,7 +6,7 @@
 /*   By: haghbal <haghbal@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/15 18:13:58 by haghbal           #+#    #+#             */
-/*   Updated: 2024/03/01 16:17:07 by haghbal          ###   ########.fr       */
+/*   Updated: 2024/03/05 20:08:27 by haghbal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -94,21 +94,4 @@ char	**ft_split(char const *s, char c)
 		return (0);
 	tab = aloc_soutab(tab, s, c);
 	return (tab);
-}
-
-#include <stdio.h>
-int main()
-{
-	char s[] = "10 25 -024 0 +06 f36";
-	char c = ' ';
-	
-	char **f = ft_split(s, c);
-	int i = 0;
-	while (f[i])
-	{
-		printf("%s\n", f[i]);
-		i++;
-	}
-	// char **f = ft_split(s, c);
-	// printf("%s", *f);
 }
