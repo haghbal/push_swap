@@ -1,27 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.h                                        :+:      :+:    :+:   */
+/*   conv_to_nbr.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: haghbal <haghbal@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/03/04 11:21:28 by haghbal           #+#    #+#             */
-/*   Updated: 2024/03/09 13:48:49 by haghbal          ###   ########.fr       */
+/*   Created: 2024/03/09 13:44:21 by haghbal           #+#    #+#             */
+/*   Updated: 2024/03/09 13:44:46 by haghbal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PUSH_SWAP
-# define PUSH_SWAP
+#include "push_swap.h"
 
-# include <stdlib.h>
-# include <unistd.h>
-#include "libft/libft.h"
+int	*conv_to_nbr(char **str, int count, int *i)
+{
+	int *arr;
 
-int	check_double(int *nbr, int len);
-int	syntax_error(char **arr);
-int	check_arg(char *str);
-int	count_len(char **av);
-int *conv_to_nbr(char **str, int count, int *i);
-char	*join_arg(char **arr, int len);
-
-#endif
+	arr = malloc(count * sizeof(int));
+	while (str[*i])
+	{
+		arr[*i] = ft_atoi(str[*i]);
+		(*i)++;
+	}
+	return (arr);
+}
