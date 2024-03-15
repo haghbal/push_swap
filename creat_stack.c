@@ -1,33 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   check_double.c                                     :+:      :+:    :+:   */
+/*   creat_stack.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: haghbal <haghbal@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/03/09 10:37:59 by haghbal           #+#    #+#             */
-/*   Updated: 2024/03/09 10:39:37 by haghbal          ###   ########.fr       */
+/*   Created: 2024/03/11 12:04:58 by haghbal           #+#    #+#             */
+/*   Updated: 2024/03/15 14:57:15 by haghbal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int check_double(int *nbr, int len)
+t_node  *creat_stack(int *arr, int len)
 {
 	int i;
-	int j;
+	t_node	*head;
 
-	i = 0;
-	while (i < len - 1)
+    i = 0;
+	head = NULL;
+	while (i < len)
 	{
-		j = i + 1;
-		while (j < len)
-		{
-			if (nbr[i] == nbr[j])
-				return (1);
-			j++;
-		}
+		ft_dlstadd_back(&head, ft_dlstnew(&arr[i]));
 		i++;
 	}
-	return (0);
+	return (head);
 }

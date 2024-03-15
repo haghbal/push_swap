@@ -1,7 +1,8 @@
 NAME = push_swap
 FLAGS = -Wall -Wextra -Werror
-SRCF = main.c syntax_error.c check_double.c check_arg.c join_arg.c count_len.c \
-		conv_to_nbr.c
+SRCF = main.c syntax_error.c check_double_and_sort.c check_arg.c join_arg.c count_len.c \
+		conv_to_nbr.c creat_stack.c ft_dlstnew.c ft_dlstlast.c ft_dlstadd_front.c \
+		ft_dlstadd_back.c sort_it.c sa_mov.c
 LIBDIR = libft
 LIBS = libft/libft.a
 LIBSRC = ft_isalpha.c ft_isdigit.c ft_isalnum.c ft_isascii.c \

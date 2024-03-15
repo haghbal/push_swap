@@ -1,28 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   conv_to_nbr.c                                      :+:      :+:    :+:   */
+/*   ft_dlstadd_back.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: haghbal <haghbal@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/03/09 13:44:21 by haghbal           #+#    #+#             */
-/*   Updated: 2024/03/11 11:49:43 by haghbal          ###   ########.fr       */
+/*   Created: 2024/03/11 19:54:08 by haghbal           #+#    #+#             */
+/*   Updated: 2024/03/12 11:51:09 by haghbal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int	*conv_to_nbr(char **str, int count, int *i)
+void	ft_dlstadd_back(t_node **lst, t_node *new)
 {
-	int *arr;
+	t_node	*fin;
 
-	arr = malloc(count * sizeof(int));
-	if (arr == NULL)
-		exit(1);
-	while (str[*i])
+	if (lst == NULL || new == NULL)
+		return ;
+	if (*lst != NULL)
 	{
-		arr[*i] = ft_atoi(str[*i]);
-		(*i)++;
+		fin = ft_dlstlast(*lst);
+		fin->next = new;
+        new->prev = fin;
+        new->next = NULL;
 	}
-	return (arr);
+	else
+		*lst = new;
 }

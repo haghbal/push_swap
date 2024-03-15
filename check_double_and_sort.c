@@ -1,28 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   conv_to_nbr.c                                      :+:      :+:    :+:   */
+/*   check_double_and_sort.c                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: haghbal <haghbal@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/03/09 13:44:21 by haghbal           #+#    #+#             */
-/*   Updated: 2024/03/11 11:49:43 by haghbal          ###   ########.fr       */
+/*   Created: 2024/03/09 10:37:59 by haghbal           #+#    #+#             */
+/*   Updated: 2024/03/11 11:31:37 by haghbal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int	*conv_to_nbr(char **str, int count, int *i)
+void check_double_and_sort(int *nbr, int len)
 {
-	int *arr;
+	int 	i;
+	int 	j;
+	bool	flag;
 
-	arr = malloc(count * sizeof(int));
-	if (arr == NULL)
-		exit(1);
-	while (str[*i])
+	i = 0;
+	flag = false;
+	while (i < len - 1)
 	{
-		arr[*i] = ft_atoi(str[*i]);
-		(*i)++;
+		j = i + 1;
+		while (j < len)
+		{
+			if (nbr[i] == nbr[j])
+				exit(write(2, "error !\ndouble number\n", 22));
+			if (nbr[i] > nbr[j])
+				flag = true;
+			j++;
+		}
+		i++;
 	}
-	return (arr);
+	if (flag == false)
+		exit(write(2, "error !\nsorted\n", 16));
 }

@@ -1,28 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   conv_to_nbr.c                                      :+:      :+:    :+:   */
+/*   sa_mov.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: haghbal <haghbal@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/03/09 13:44:21 by haghbal           #+#    #+#             */
-/*   Updated: 2024/03/11 11:49:43 by haghbal          ###   ########.fr       */
+/*   Created: 2024/03/15 15:40:17 by haghbal           #+#    #+#             */
+/*   Updated: 2024/03/15 15:44:58 by haghbal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "push_swap"
 
-int	*conv_to_nbr(char **str, int count, int *i)
+void	sa_mov(t_node a)
 {
-	int *arr;
-
-	arr = malloc(count * sizeof(int));
-	if (arr == NULL)
-		exit(1);
-	while (str[*i])
-	{
-		arr[*i] = ft_atoi(str[*i]);
-		(*i)++;
-	}
-	return (arr);
+	a
 }

@@ -1,28 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   conv_to_nbr.c                                      :+:      :+:    :+:   */
+/*   sorte_it.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: haghbal <haghbal@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/03/09 13:44:21 by haghbal           #+#    #+#             */
-/*   Updated: 2024/03/11 11:49:43 by haghbal          ###   ########.fr       */
+/*   Created: 2024/03/12 16:07:01 by haghbal           #+#    #+#             */
+/*   Updated: 2024/03/12 16:23:32 by haghbal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int	*conv_to_nbr(char **str, int count, int *i)
+void	sort_it(t_node a, t_node b, int len)
 {
-	int *arr;
-
-	arr = malloc(count * sizeof(int));
-	if (arr == NULL)
-		exit(1);
-	while (str[*i])
+	if (len = 2)
+		sa_mov(a);
+	if (len = 3)
 	{
-		arr[*i] = ft_atoi(str[*i]);
-		(*i)++;
+		sort_three()
 	}
-	return (arr);
+	if (len = 4)
+	{
+		sort_four()
+	}
+	if (len == 5)
+	{
+		sort_five()
+	}
+	if (len > 5)
+	{
+		sort_algo()
+	}
 }
