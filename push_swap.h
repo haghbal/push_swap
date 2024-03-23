@@ -6,7 +6,7 @@
 /*   By: haghbal <haghbal@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/04 11:21:28 by haghbal           #+#    #+#             */
-/*   Updated: 2024/03/18 22:12:48 by haghbal          ###   ########.fr       */
+/*   Updated: 2024/03/23 16:49:10 by haghbal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@
 #include <stdio.h>
 #include "libft/libft.h"
 
-void    check_double_and_sort(int *nbr, int len);
+int    check_double_and_sort(int *nbr, int len);
 int	syntax_error(char **arr);
 int	check_arg(char *str);
 int	count_len(char **av);
@@ -56,5 +56,8 @@ void	rrr(t_node **stack_a, t_node **stack_b);
 void    push(t_node **src, t_node **dest);
 void	pa(t_node **stack_a, t_node **stack_b);
 void	pb(t_node **stack_a, t_node **stack_b);
+
+int sort_three(t_node *stack);
+t_node  *find_max(t_node **stack);
 
 #endif

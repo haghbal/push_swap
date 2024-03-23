@@ -1,21 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   sb.c                                               :+:      :+:    :+:   */
+/*   find_min.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: haghbal <haghbal@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/03/16 15:07:47 by haghbal           #+#    #+#             */
-/*   Updated: 2024/03/23 16:49:15 by haghbal          ###   ########.fr       */
+/*   Created: 2024/03/23 17:00:41 by haghbal           #+#    #+#             */
+/*   Updated: 2024/03/23 17:04:39 by haghbal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	sb(t_node *stack)
+t_node  *find_min(t_node **stack)
 {
-	if (swap(&stack) == -1)
-		return ;
-	ft_putendl_fd("sb\n", 1);
-	return ;
+    t_node  *min;
+    
+    min == NULL;
+    while ((*stack != NULL))
+    {
+        
+    }
+    
 }

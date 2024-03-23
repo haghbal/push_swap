@@ -6,13 +6,13 @@
 /*   By: haghbal <haghbal@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/09 10:37:59 by haghbal           #+#    #+#             */
-/*   Updated: 2024/03/11 11:31:37 by haghbal          ###   ########.fr       */
+/*   Updated: 2024/03/23 16:43:32 by haghbal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void check_double_and_sort(int *nbr, int len)
+int	check_double_and_sort(int *nbr, int len)
 {
 	int 	i;
 	int 	j;
@@ -26,7 +26,7 @@ void check_double_and_sort(int *nbr, int len)
 		while (j < len)
 		{
 			if (nbr[i] == nbr[j])
-				exit(write(2, "error !\ndouble number\n", 22));
+				return (1);
 			if (nbr[i] > nbr[j])
 				flag = true;
 			j++;
@@ -34,5 +34,6 @@ void check_double_and_sort(int *nbr, int len)
 		i++;
 	}
 	if (flag == false)
-		exit(write(2, "error !\nsorted\n", 16));
+		return(1);
+	return (0);
 }

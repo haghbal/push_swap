@@ -6,7 +6,7 @@
 /*   By: haghbal <haghbal@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/04 18:04:00 by haghbal           #+#    #+#             */
-/*   Updated: 2024/03/23 13:55:46 by haghbal          ###   ########.fr       */
+/*   Updated: 2024/03/23 16:56:31 by haghbal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ int main(int ac, char **av)
 	char	**split_num;
 	t_node	*stack_a;
 	t_node	*stack_b;
-	
+	t_node	*max;
 	stack_a = NULL;
 	stack_b = NULL;
 	i = 1;
@@ -47,11 +47,17 @@ int main(int ac, char **av)
 			return (write(2, "syntax error", 12));
 		i = 0;
 		arr = conv_to_nbr(split_num, count_len(av), &i);
-		check_double_and_sort(arr, i);
+		if (check_double_and_sort(arr, i))
+		{
+			free(arr);
+			exit(1);
+		}
 		stack_a = creat_stack(arr, i);
+		sort_it(&stack_a, i);
 		
 		print_stack(stack_a, 'A');
-		print_stack(stack_b, 'B');
+		print_stack(max, 'X');
+		// print_stack(stack_b, 'B');
 		
 
 	   	// pb(&stack_a, &stack_b);
