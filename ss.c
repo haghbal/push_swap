@@ -1,28 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   creat_stack.c                                      :+:      :+:    :+:   */
+/*   ss.c                                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: haghbal <haghbal@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/03/11 12:04:58 by haghbal           #+#    #+#             */
-/*   Updated: 2024/03/18 16:19:47 by haghbal          ###   ########.fr       */
+/*   Created: 2024/03/17 22:43:49 by haghbal           #+#    #+#             */
+/*   Updated: 2024/03/18 22:20:05 by haghbal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-t_node  *creat_stack(int *arr, int len)
+void	ss(t_node **stack_a, t_node **stack_b)
 {
-	int i;
-	t_node	*head;
-
-    i = 0;
-	head = NULL;
-	while (i < len)
-	{
-		ft_dlstadd_back(&head, ft_dlstnew(&arr[i]));
-		i++;
-	}
-	return (head);
+	swap(stack_a);
+	swap(stack_b);
+	ft_putstr_fd("ss\n", 1);
 }

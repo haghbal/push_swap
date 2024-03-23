@@ -4,7 +4,9 @@
         "stdlib.h": "c",
         "libft.h": "c",
         "stdio.h": "c",
-        "push_swap.h": "c"
+        "push_swap.h": "c",
+        "ostream": "c",
+        "chrono": "c"
     },
     "C_Cpp.errorSquiggles": "disabled"
 }

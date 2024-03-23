@@ -1,28 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   creat_stack.c                                      :+:      :+:    :+:   */
+/*   ft_dlstsize.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: haghbal <haghbal@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/03/11 12:04:58 by haghbal           #+#    #+#             */
-/*   Updated: 2024/03/18 16:19:47 by haghbal          ###   ########.fr       */
+/*   Created: 2024/03/16 14:17:23 by haghbal           #+#    #+#             */
+/*   Updated: 2024/03/16 14:21:53 by haghbal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-t_node  *creat_stack(int *arr, int len)
+int	ft_dlstsize(t_node *lst)
 {
-	int i;
-	t_node	*head;
+	int	i;
 
-    i = 0;
-	head = NULL;
-	while (i < len)
+	if (lst == NULL)
+		return (0);
+	i = 0;
+	while (lst)
 	{
-		ft_dlstadd_back(&head, ft_dlstnew(&arr[i]));
+		lst = lst->next;
 		i++;
 	}
-	return (head);
+	return (i);
 }

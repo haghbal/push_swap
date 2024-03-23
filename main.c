@@ -6,7 +6,7 @@
 /*   By: haghbal <haghbal@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/04 18:04:00 by haghbal           #+#    #+#             */
-/*   Updated: 2024/03/15 15:33:14 by haghbal          ###   ########.fr       */
+/*   Updated: 2024/03/23 13:55:46 by haghbal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,13 +26,14 @@ void	print_stack(t_node *stack, char c){
 
 int main(int ac, char **av)
 {
-	int i;
-	char *num;
-	int *arr;
-	char **split_num;
+	int		i;
+	char	*num;
+	int		*arr;
+	char	**split_num;
 	t_node	*stack_a;
-	t_node *	stack_b;
+	t_node	*stack_b;
 	
+	stack_a = NULL;
 	stack_b = NULL;
 	i = 1;
 	if (ac == 1 || (ac == 2 && av[1][0] == '\0'))
@@ -48,8 +49,40 @@ int main(int ac, char **av)
 		arr = conv_to_nbr(split_num, count_len(av), &i);
 		check_double_and_sort(arr, i);
 		stack_a = creat_stack(arr, i);
-		sort_it(stack_a, stack_b, i);
+		
 		print_stack(stack_a, 'A');
+		print_stack(stack_b, 'B');
+		
+
+	   	// pb(&stack_a, &stack_b);
+		// pb(&stack_a, &stack_b);
+		// pa(&stack_a, &stack_b);
+		// print_stack(stack_a, 'A');
+		// print_stack(stack_b, 'B');
+		
+		// rr(&stack_a, &stack_b);
+		// print_stack(stack_a, 'A');
+		// print_stack(stack_b, 'B');
+
+		// ra(&stack_a);
+		// rb(&stack_b);
+		// print_stack(stack_a, 'A');
+		// print_stack(stack_b, 'B');
+		
+		// rrr(&stack_a, &stack_b);
+		// print_stack(stack_a, 'A');
+		// print_stack(stack_b, 'B');
+		
+		// rra(&stack_a);
+		// rrb(&stack_b);
+		// print_stack(stack_a, 'A');
+		// print_stack(stack_b, 'B');
+		
+		// ss(&stack_a, &stack_b);
+		// print_stack(stack_a, 'A');
+		// print_stack(stack_b, 'B');
+		
+		// sort_it(&stack_a, i);
 		// print_stack(stack_b, 'B');
 	}
     return (0);

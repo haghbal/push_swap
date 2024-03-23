@@ -6,7 +6,7 @@
 /*   By: haghbal <haghbal@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/04 11:21:28 by haghbal           #+#    #+#             */
-/*   Updated: 2024/03/15 15:43:24 by haghbal          ###   ########.fr       */
+/*   Updated: 2024/03/18 22:12:48 by haghbal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@
 # include <stdlib.h>
 # include <unistd.h>
 # include <stdbool.h>
+#include <stdio.h>
 #include "libft/libft.h"
 
 void    check_double_and_sort(int *nbr, int len);
@@ -27,6 +28,7 @@ char	*join_arg(char **arr, int len);
 
 typedef struct s_node{
     int data;
+    int index;
     struct s_node *prev;
     struct s_node *next;
 } t_node;
@@ -36,9 +38,23 @@ t_node	*ft_dlstlast(t_node *lst);
 t_node	*ft_dlstnew(int *content);
 void	ft_dlstadd_back(t_node **lst, t_node *new);
 void	ft_dlstadd_front(t_node **lst, t_node *new);
-void	sort_it(t_node a, t_node b, int len);
-void	sa_mov(t_node a);
+int	ft_dlstsize(t_node *lst);
 
-void	(t_node a);
+void	sort_it(t_node *a, int len);
+int	swap(t_node **stack);
+void	sa(t_node *stack);
+void	sb(t_node *stack);
+void	ss(t_node **stack_a, t_node **stack_b);
+int	retate(t_node **stack);
+void	ra(t_node **stack_a);
+void	rb(t_node **stack_b);
+void	rr(t_node **stack_a, t_node **stack_b);
+int revs_retate(t_node **stack);
+void	rra(t_node **stack_a);
+void	rrb(t_node **stack_b);
+void	rrr(t_node **stack_a, t_node **stack_b);
+void    push(t_node **src, t_node **dest);
+void	pa(t_node **stack_a, t_node **stack_b);
+void	pb(t_node **stack_a, t_node **stack_b);
 
 #endif
