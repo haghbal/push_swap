@@ -6,7 +6,7 @@
 /*   By: haghbal <haghbal@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/04 18:04:00 by haghbal           #+#    #+#             */
-/*   Updated: 2024/03/23 16:56:31 by haghbal          ###   ########.fr       */
+/*   Updated: 2024/03/27 15:42:31 by haghbal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,15 +14,6 @@
 #include <stdio.h>
 #include "push_swap.h"
 #include <stdio.h>
-
-void	print_stack(t_node *stack, char c){
-	printf("stack %c ----\n", c);
-	while(stack){
-		printf("%d\n", stack->data);
-		stack = stack->next;
-	}
-	puts("-------------------");
-}
 
 int main(int ac, char **av)
 {
@@ -32,13 +23,11 @@ int main(int ac, char **av)
 	char	**split_num;
 	t_node	*stack_a;
 	t_node	*stack_b;
-	t_node	*max;
 	stack_a = NULL;
 	stack_b = NULL;
 	i = 1;
 	if (ac == 1 || (ac == 2 && av[1][0] == '\0'))
 		return (1);
-		puts("heerrr");
 	if (ac > 1)
 	{
 		num = join_arg(av, count_len(av));
@@ -53,43 +42,9 @@ int main(int ac, char **av)
 			exit(1);
 		}
 		stack_a = creat_stack(arr, i);
-		sort_it(&stack_a, i);
-		
+    	// puts(">>>>>>>heeer 1");
+		sort_it(stack_a, i);
 		print_stack(stack_a, 'A');
-		print_stack(max, 'X');
-		// print_stack(stack_b, 'B');
-		
-
-	   	// pb(&stack_a, &stack_b);
-		// pb(&stack_a, &stack_b);
-		// pa(&stack_a, &stack_b);
-		// print_stack(stack_a, 'A');
-		// print_stack(stack_b, 'B');
-		
-		// rr(&stack_a, &stack_b);
-		// print_stack(stack_a, 'A');
-		// print_stack(stack_b, 'B');
-
-		// ra(&stack_a);
-		// rb(&stack_b);
-		// print_stack(stack_a, 'A');
-		// print_stack(stack_b, 'B');
-		
-		// rrr(&stack_a, &stack_b);
-		// print_stack(stack_a, 'A');
-		// print_stack(stack_b, 'B');
-		
-		// rra(&stack_a);
-		// rrb(&stack_b);
-		// print_stack(stack_a, 'A');
-		// print_stack(stack_b, 'B');
-		
-		// ss(&stack_a, &stack_b);
-		// print_stack(stack_a, 'A');
-		// print_stack(stack_b, 'B');
-		
-		// sort_it(&stack_a, i);
-		// print_stack(stack_b, 'B');
 	}
     return (0);
 }

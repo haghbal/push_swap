@@ -6,22 +6,18 @@
 /*   By: haghbal <haghbal@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/12 16:07:01 by haghbal           #+#    #+#             */
-/*   Updated: 2024/03/23 16:59:11 by haghbal          ###   ########.fr       */
+/*   Updated: 2024/03/27 15:40:49 by haghbal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	sort_it(t_node **a, int len)
+void	sort_it(t_node *a, int len)
 {
     if (len == 2)
     {
-        sa(&a);
+        sa(a);
     }
     else if (len == 3)
         sort_three(&a);
-    else if (len > 3)
-    {
-        algorithm();
-    }
 }

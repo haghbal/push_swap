@@ -6,7 +6,7 @@
 /*   By: haghbal <haghbal@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/04 11:21:28 by haghbal           #+#    #+#             */
-/*   Updated: 2024/03/23 16:49:10 by haghbal          ###   ########.fr       */
+/*   Updated: 2024/03/27 16:34:01 by haghbal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,6 @@ void	ft_dlstadd_back(t_node **lst, t_node *new);
 void	ft_dlstadd_front(t_node **lst, t_node *new);
 int	ft_dlstsize(t_node *lst);
 
-void	sort_it(t_node *a, int len);
 int	swap(t_node **stack);
 void	sa(t_node *stack);
 void	sb(t_node *stack);
@@ -57,7 +56,17 @@ void    push(t_node **src, t_node **dest);
 void	pa(t_node **stack_a, t_node **stack_b);
 void	pb(t_node **stack_a, t_node **stack_b);
 
-int sort_three(t_node *stack);
-t_node  *find_max(t_node **stack);
+void	sort_it(t_node *a, int len);
+void    sort_three(t_node **stack);
+t_node  *find_max(t_node *stack);
+t_node  *find_min(t_node *stack);
+
+
+
+
+
+
+void	print_stack(t_node *stack, char c);
+
 
 #endif
