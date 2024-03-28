@@ -6,7 +6,7 @@
 /*   By: haghbal <haghbal@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/23 15:56:27 by haghbal           #+#    #+#             */
-/*   Updated: 2024/03/27 16:31:51 by haghbal          ###   ########.fr       */
+/*   Updated: 2024/03/28 16:38:25 by haghbal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,13 +15,18 @@
 t_node  *find_max(t_node *stack)
 {
     t_node  *max;
+    t_node	*current;
 
-    max = NULL;
-    while(stack && stack->next != NULL)
+	max = NULL;
+    current = stack;
+	if (current == NULL)
+		return (NULL);
+	max = current;
+    while(current)
     {
-        if (max->data < stack->data)
-            max->data = stack->data;
-        stack = stack->next;
+        if (current->data > max->data)
+            max = current;
+        current = current->next;
     }
     return (max);
 }

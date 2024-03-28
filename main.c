@@ -6,7 +6,7 @@
 /*   By: haghbal <haghbal@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/04 18:04:00 by haghbal           #+#    #+#             */
-/*   Updated: 2024/03/27 15:42:31 by haghbal          ###   ########.fr       */
+/*   Updated: 2024/03/28 22:55:09 by haghbal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,8 +42,9 @@ int main(int ac, char **av)
 			exit(1);
 		}
 		stack_a = creat_stack(arr, i);
-    	// puts(">>>>>>>heeer 1");
-		sort_it(stack_a, i);
+		print_stack(stack_a, 'A');
+		stack_a = sort_it(stack_a, i);
+		printf ("size : %d\n", ft_dlstsize(stack_a));
 		print_stack(stack_a, 'A');
 	}
     return (0);

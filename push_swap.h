@@ -6,7 +6,7 @@
 /*   By: haghbal <haghbal@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/04 11:21:28 by haghbal           #+#    #+#             */
-/*   Updated: 2024/03/27 16:34:01 by haghbal          ###   ########.fr       */
+/*   Updated: 2024/03/28 22:55:39 by haghbal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,8 +56,8 @@ void    push(t_node **src, t_node **dest);
 void	pa(t_node **stack_a, t_node **stack_b);
 void	pb(t_node **stack_a, t_node **stack_b);
 
-void	sort_it(t_node *a, int len);
-void    sort_three(t_node **stack);
+t_node	*sort_it(t_node *a, int len);
+t_node    *sort_three(t_node **stack);
 t_node  *find_max(t_node *stack);
 t_node  *find_min(t_node *stack);
 
