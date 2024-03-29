@@ -6,7 +6,7 @@
 /*   By: haghbal <haghbal@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/04 11:21:28 by haghbal           #+#    #+#             */
-/*   Updated: 2024/03/29 15:42:01 by haghbal          ###   ########.fr       */
+/*   Updated: 2024/03/29 23:28:01 by haghbal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,7 @@ char	*join_arg(char **arr, int len);
 typedef struct s_node{
     int data;
     int index;
+    bool above_median;
     struct s_node *prev;
     struct s_node *next;
 } t_node;
@@ -61,6 +62,9 @@ t_node	*sort_three(t_node **stack);
 t_node	*find_max(t_node *stack);
 t_node	*find_min(t_node *stack);
 t_node	*sort_algo(t_node **stack_a, t_node **stack_b);
+
+void	init_nodes_a(t_node *a, t_node *b);
+void	current_index(t_node *stack);
 
 
 

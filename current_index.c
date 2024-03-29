@@ -1,29 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   sort_algo.c                                        :+:      :+:    :+:   */
+/*   current_index.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: haghbal <haghbal@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/03/29 14:37:03 by haghbal           #+#    #+#             */
-/*   Updated: 2024/03/29 21:57:21 by haghbal          ###   ########.fr       */
+/*   Created: 2024/03/29 23:13:51 by haghbal           #+#    #+#             */
+/*   Updated: 2024/03/29 23:19:55 by haghbal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-t_node  *sort_algo(t_node **stack_a, t_node **stack_b)
+void	current_index(t_node *stack)
 {
-    int	len_a;
+	int i;
+	int median;
 
-	len_a = ft_dlstsize(*stack_a);
-	if (len_a-- > 3)
-		pb(stack_a, stack_b);
-	if (len_a-- > 3)
-		pb(stack_a, stack_b);
-	while (len_a -- > 3)
+	i = 0;
+	if (stack == NUUL)
+		return ;
+	while (stack)
 	{
-		
+		stack->index = i;
+		if (i <= median)
+			stack->above_median = true;
+		else
+			stack->above_median = false;
+		stack = stack->next;
+		i++;
 	}
-	
 }
