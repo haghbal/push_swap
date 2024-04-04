@@ -6,7 +6,7 @@
 /*   By: haghbal <haghbal@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/04 11:21:28 by haghbal           #+#    #+#             */
-/*   Updated: 2024/03/29 23:28:01 by haghbal          ###   ########.fr       */
+/*   Updated: 2024/04/02 00:34:02 by haghbal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,7 @@
 # include <unistd.h>
 # include <stdbool.h>
 #include <stdio.h>
+#include <limits.h>
 #include "libft/libft.h"
 
 int		check_double_and_sort(int *nbr, int len);
@@ -29,7 +30,10 @@ char	*join_arg(char **arr, int len);
 typedef struct s_node{
     int data;
     int index;
-    bool above_median;
+    int	push_cost;
+    bool	above_median;
+    bool	min_cost;
+    struct s_node *target_node;
     struct s_node *prev;
     struct s_node *next;
 } t_node;
@@ -58,13 +62,17 @@ void	push(t_node **src, t_node **dest);
 void	pa(t_node **stack_a, t_node **stack_b);
 void	pb(t_node **stack_a, t_node **stack_b);
 
-t_node	*sort_three(t_node **stack);
+void	sort_three(t_node **stack);
 t_node	*find_max(t_node *stack);
 t_node	*find_min(t_node *stack);
-t_node	*sort_algo(t_node **stack_a, t_node **stack_b);
+void	sort_algo(t_node **stack_a, t_node **stack_b);
 
 void	init_nodes_a(t_node *a, t_node *b);
 void	current_index(t_node *stack);
+void	set_target_a(t_node *a, t_node *b);
+void	calcule_move(t_node *a, t_node *b);
+void	set_min_cost(t_node *stack);
+void	push_a_to_b(t_node *a, t_node *b);
 
 
 

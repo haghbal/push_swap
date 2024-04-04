@@ -6,7 +6,7 @@
 /*   By: haghbal <haghbal@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/04 18:04:00 by haghbal           #+#    #+#             */
-/*   Updated: 2024/03/29 15:37:56 by haghbal          ###   ########.fr       */
+/*   Updated: 2024/04/02 00:28:06 by haghbal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,9 +34,9 @@ int main(int ac, char **av)
 		if (len == 2)
 			sa(stack_a);
     	else if (len == 3)
-        	stack_a = sort_three(&stack_a);
+        	sort_three(&stack_a);
     	else if (len > 3)
-       		stack_a = sort_algo(&stack_a, &stack_b);
+       		sort_algo(&stack_a, &stack_b);
 		print_stack(stack_a, 'B');
 	}
     return (0);

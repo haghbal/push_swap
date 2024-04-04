@@ -6,7 +6,7 @@
 /*   By: haghbal <haghbal@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/23 17:00:41 by haghbal           #+#    #+#             */
-/*   Updated: 2024/03/28 16:38:28 by haghbal          ###   ########.fr       */
+/*   Updated: 2024/03/30 18:17:36 by haghbal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,5 +28,6 @@ t_node  *find_min(t_node *stack)
             min = current;
         current = current->next;
     }
+    min->next = NULL;
     return (min);
 }

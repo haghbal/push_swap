@@ -1,18 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   set_target.c                                       :+:      :+:    :+:   */
+/*   push_a_to_b.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: haghbal <haghbal@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/03/29 23:23:35 by haghbal           #+#    #+#             */
-/*   Updated: 2024/03/29 23:25:07 by haghbal          ###   ########.fr       */
+/*   Created: 2024/03/31 20:27:51 by haghbal           #+#    #+#             */
+/*   Updated: 2024/04/04 00:16:11 by haghbal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	set_target_a(t_node *a, t_node *b)
+void	push_a_to_b(t_node *a, t_node *b)
 {
-	
-}
+	while (a)
+	{
+		if (a->min_cost == true && a->above_median && a->target_node->above_median)
+			r_lesDeux(a, b)
+		else if (a->min->coste = true && !(a->above_median) && !(a->target_node->above_median))
+			rr_lesDeux()
+		a = a->next;
+	}
+} 

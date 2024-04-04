@@ -6,13 +6,13 @@
 /*   By: haghbal <haghbal@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/16 14:49:04 by haghbal           #+#    #+#             */
-/*   Updated: 2024/03/29 14:18:28 by haghbal          ###   ########.fr       */
+/*   Updated: 2024/04/02 00:34:29 by haghbal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-t_node    *sort_three(t_node **stack)
+void    sort_three(t_node **stack)
 {
     t_node  *last;
     t_node  *max;
@@ -37,5 +37,4 @@ t_node    *sort_three(t_node **stack)
     }
     else if ((*stack)->data == max->data && last->data != min->data)
         ra(stack);
-    return (*stack);
 }
