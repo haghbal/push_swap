@@ -1,21 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   r_lesDeux.c                                        :+:      :+:    :+:   */
+/*   rr_lesDeux.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: haghbal <haghbal@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/04/04 00:09:00 by haghbal           #+#    #+#             */
-/*   Updated: 2024/04/04 23:00:01 by haghbal          ###   ########.fr       */
+/*   Created: 2024/04/05 00:28:11 by haghbal           #+#    #+#             */
+/*   Updated: 2024/04/05 00:38:12 by haghbal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void    r_lesDeux(t_node **a, t_node **b)
+void	rr_lesDeux(t_node **a, t_node **b)
 {
-    while((!a->min_cost) && b != a->target->node)
-        rr(&a, &b);
-    current_index(*a);
-    current_index(*b);
+	while
 }

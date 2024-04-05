@@ -5,7 +5,7 @@ SRCF = main.c syntax_error.c check_double_and_sort.c check_arg.c join_arg.c coun
 		ft_dlstadd_back.c sa.c swap.c sb.c ss.c ft_dlstsize.c retate.c ra.c \
 		rb.c rra.c rrb.c revs_retate.c push.c rr.c rrr.c pa.c pb.c sort_three.c find_max.c \
 		find_min.c print_stack.c stack_init.c sort_algo.c current_index.c set_target_a.c \
-		init_nodes_a.c calcule_move.c set_min_cost.c
+		init_nodes_a.c calcule_move.c set_min_cost.c r_lesDeux.c
 LIBDIR = libft
 LIBS = libft/libft.a
 LIBSRC = ft_isalpha.c ft_isdigit.c ft_isalnum.c ft_isascii.c \

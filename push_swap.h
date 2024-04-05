@@ -6,7 +6,7 @@
 /*   By: haghbal <haghbal@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/04 11:21:28 by haghbal           #+#    #+#             */
-/*   Updated: 2024/04/02 00:34:02 by haghbal          ###   ########.fr       */
+/*   Updated: 2024/04/05 00:34:53 by haghbal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,6 +74,8 @@ void	calcule_move(t_node *a, t_node *b);
 void	set_min_cost(t_node *stack);
 void	push_a_to_b(t_node *a, t_node *b);
 
+void    r_lesDeux(t_node **a, t_node **b);
+void	rr_lesDeux(t_node **a, t_node **b);
 
 
 
