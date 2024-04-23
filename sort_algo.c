@@ -6,7 +6,7 @@
 /*   By: haghbal <haghbal@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/29 14:37:03 by haghbal           #+#    #+#             */
-/*   Updated: 2024/04/04 00:14:27 by haghbal          ###   ########.fr       */
+/*   Updated: 2024/04/23 18:38:48 by haghbal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,9 +27,19 @@ void	sort_algo(t_node **stack_a, t_node **stack_b)
 		len_a--;
 	}
 	while (len_a-- > 3)
+	{
 		init_nodes_a(*stack_a, *stack_b);
-		push_a_to_b(*a, *b);
-		
+		print_stack(*stack_a, 'B');
+		push_a_to_b(stack_a, stack_b);
+	}
+	print_stack(*stack_a, 'Z');
+	sort_three(stack_a);
+	print_stack(*stack_a, 'C');
+	while (*stack_b)
+	{
+		init_nodes_b(*stack_a, *stack_b);
+		push_b_to_a(stack_a, stack_b);
+	}
+	current_index(*stack_a);
+	min_on_top(stack_a);
 }
-
-		// push_a_to_b(stack_a, stack_b);

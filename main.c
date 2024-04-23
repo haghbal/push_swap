@@ -6,7 +6,7 @@
 /*   By: haghbal <haghbal@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/04 18:04:00 by haghbal           #+#    #+#             */
-/*   Updated: 2024/04/02 00:28:06 by haghbal          ###   ########.fr       */
+/*   Updated: 2024/04/23 18:45:49 by haghbal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ int main(int ac, char **av)
 		len = ft_dlstsize(stack_a);
 		printf ("size : %d\n", len);
 		if (len == 2)
-			sa(stack_a);
+			sa(&stack_a);
     	else if (len == 3)
         	sort_three(&stack_a);
     	else if (len > 3)

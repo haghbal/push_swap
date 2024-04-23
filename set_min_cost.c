@@ -6,7 +6,7 @@
 /*   By: haghbal <haghbal@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/31 17:23:27 by haghbal           #+#    #+#             */
-/*   Updated: 2024/04/02 22:52:07 by haghbal          ###   ########.fr       */
+/*   Updated: 2024/04/23 16:14:37 by haghbal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,7 @@ void	set_min_cost(t_node *stack)
 	
 	if (!stack)
 		return ;
+	min_cost_node = stack;
 	cost_value = stack->next->push_cost;
 	while (stack)
 	{

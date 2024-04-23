@@ -6,7 +6,7 @@
 /*   By: haghbal <haghbal@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/04 11:21:28 by haghbal           #+#    #+#             */
-/*   Updated: 2024/04/05 00:34:53 by haghbal          ###   ########.fr       */
+/*   Updated: 2024/04/23 18:44:59 by haghbal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,7 +47,7 @@ void	ft_dlstadd_front(t_node **lst, t_node *new);
 int		ft_dlstsize(t_node *lst);
 
 int		swap(t_node **stack);
-void	sa(t_node *stack);
+void	sa(t_node **stack);
 void	sb(t_node *stack);
 void	ss(t_node **stack_a, t_node **stack_b);
 int		retate(t_node **stack);
@@ -72,12 +72,16 @@ void	current_index(t_node *stack);
 void	set_target_a(t_node *a, t_node *b);
 void	calcule_move(t_node *a, t_node *b);
 void	set_min_cost(t_node *stack);
-void	push_a_to_b(t_node *a, t_node *b);
 
+void	init_nodes_b(t_node *a, t_node *b);
+void	push_a_to_b(t_node **a, t_node **b);
+void	set_target_b(t_node *b, t_node *a);
 void    r_lesDeux(t_node **a, t_node **b);
 void	rr_lesDeux(t_node **a, t_node **b);
+void	prep_for_push(t_node **stack, t_node *smallest_node, char stack_name);
 
-
+void	push_b_to_a(t_node **stack_a, t_node **stack_b);
+void	min_on_top(t_node **stack);
 
 
 
