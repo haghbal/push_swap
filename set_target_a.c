@@ -6,7 +6,7 @@
 /*   By: haghbal <haghbal@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/29 23:23:35 by haghbal           #+#    #+#             */
-/*   Updated: 2024/04/23 13:15:16 by haghbal          ###   ########.fr       */
+/*   Updated: 2024/04/25 16:25:53 by haghbal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,9 +18,9 @@ void	set_target_a(t_node *a, t_node *b)
 	t_node	*current_b;
 	long	best_node;
 
-	best_node = LONG_MIN;
 	while (a)
 	{
+		best_node = LONG_MIN;
 		current_b = b;
 		while (current_b)
 		{
@@ -39,19 +39,19 @@ void	set_target_a(t_node *a, t_node *b)
 	}
 }
 
-void	set_target_b(t_node *b, t_node *a)
+void	set_target_b(t_node *a, t_node *b)
 {
 	t_node	*target_node;
 	t_node	*current_a;
 	long	best_node;
-
-	best_node = LONG_MAX;
+	
 	while (b)
 	{
+		best_node = LONG_MAX;
 		current_a = a;
 		while (current_a)
 		{
-			if (current_a->data > b->data && current_a->data > best_node)
+			if (current_a->data > b->data && current_a->data < best_node)
 			{
 				best_node = current_a->data;
 				target_node = current_a;

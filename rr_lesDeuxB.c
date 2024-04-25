@@ -1,30 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   retate.c                                           :+:      :+:    :+:   */
+/*   rr_lesDeuxB.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: haghbal <haghbal@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/03/18 13:40:22 by haghbal           #+#    #+#             */
-/*   Updated: 2024/03/18 14:24:14 by haghbal          ###   ########.fr       */
+/*   Created: 2024/04/25 22:15:54 by haghbal           #+#    #+#             */
+/*   Updated: 2024/04/25 22:17:02 by haghbal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int	retate(t_node **stack)
+void	rr_lesDeuxB(t_node **a, t_node **b)
 {
-	t_node	*head;
-	t_node	*last;
-	
-	if (ft_dlstsize(*stack) < 2)
-		return (-1);
-	head = (*stack);
-	(*stack) = (*stack)->next;
-	last = ft_dlstlast(*stack);
-	last->next = head;
-	head->next = NULL;
-	head->prev = last;
-	(*stack)->prev = NULL;
-	return (0);
+	while((!(*b)->min_cost) && (*a) != (*b)->target_node)
+        rrr(a, b);
+	current_index(*a);
+    current_index(*b);
 }

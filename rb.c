@@ -6,7 +6,7 @@
 /*   By: haghbal <haghbal@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/17 17:37:58 by haghbal           #+#    #+#             */
-/*   Updated: 2024/03/18 22:19:21 by haghbal          ###   ########.fr       */
+/*   Updated: 2024/04/24 14:44:46 by haghbal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void	rb(t_node **stack_b)
 {
-	if (retate(stack_b) == -1)
+	if (rotate(stack_b) == -1)
 		return ;
 	ft_putstr_fd("rb\n", 1);
 }

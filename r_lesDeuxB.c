@@ -1,22 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   rr.c                                               :+:      :+:    :+:   */
+/*   r_lesDeuxB.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: haghbal <haghbal@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/03/18 12:04:03 by haghbal           #+#    #+#             */
-/*   Updated: 2024/04/24 14:44:46 by haghbal          ###   ########.fr       */
+/*   Created: 2024/04/25 22:13:23 by haghbal           #+#    #+#             */
+/*   Updated: 2024/04/25 22:14:46 by haghbal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	rr(t_node **stack_a, t_node **stack_b)
+void    r_lesDeuxB(t_node **a, t_node **b)
 {
-	if ((ft_dlstsize(*stack_a) < 2) || (ft_dlstsize(*stack_a) < 2))
-		return ;
-	rotate(stack_a);
-	rotate(stack_b);
-	ft_putstr_fd("rr\n", 1);
+    while((!(*b)->min_cost) && (*a) != (*b)->target_node)
+        rr(a, b);
+    current_index(*a);
+    current_index(*b);
 }
