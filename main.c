@@ -6,7 +6,7 @@
 /*   By: haghbal <haghbal@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/04 18:04:00 by haghbal           #+#    #+#             */
-/*   Updated: 2024/04/25 22:06:43 by haghbal          ###   ########.fr       */
+/*   Updated: 2024/04/26 21:34:16 by haghbal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,8 +15,13 @@
 #include "push_swap.h"
 #include <stdio.h>
 
+void f(void){
+	system("leaks push_swap");
+}
+
 int main(int ac, char **av)
 {
+	atexit(f);
 	int len;
 	t_node	*stack_a;
 	t_node	*stack_b;
@@ -37,7 +42,7 @@ int main(int ac, char **av)
         	sort_three(&stack_a);
     	else if (len > 3)
        		sort_algo(&stack_a, &stack_b);
-		print_stack(stack_a, 'A');
+		// print_stack(stack_a, 'A');
 	}
     return (0);
 }

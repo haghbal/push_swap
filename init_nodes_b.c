@@ -6,7 +6,7 @@
 /*   By: haghbal <haghbal@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/23 09:51:38 by haghbal           #+#    #+#             */
-/*   Updated: 2024/04/25 14:23:06 by haghbal          ###   ########.fr       */
+/*   Updated: 2024/04/26 15:30:40 by haghbal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,4 +17,6 @@ void	init_nodes_b(t_node *a, t_node *b)
 	current_index(b);
 	current_index(a);
 	set_target_b(a, b);
+	calcule_move(b, a);
+	set_min_cost(b);
 }

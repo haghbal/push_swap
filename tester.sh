@@ -10,12 +10,14 @@ quantity=500
 while true
 do
 	numbers=$(seq $from $to | sort -R | head -n $quantity | paste -sd" " -)
-	ins=$(./push_swap $numbers)
+	#ins=$(./push_swap $numbers)
+	numOfIns=$(./push_swap $numbers | wc -l)
     ok=$(./push_swap $numbers | ./checker_Mac $numbers)
-    if [[ $ok == "OK" ]]
-    then
-        echo "OK"
-    fi
+	echo $numOfIns
+    # if [[ $ok == "OK" ]]
+    # then
+    #     echo "OK"
+    # fi
 	# if [ $ins -ge 10000 ]
 	# then
 	# 	echo -e "${RED}$ins"

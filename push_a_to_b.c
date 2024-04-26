@@ -6,7 +6,7 @@
 /*   By: haghbal <haghbal@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/31 20:27:51 by haghbal           #+#    #+#             */
-/*   Updated: 2024/04/25 22:21:31 by haghbal          ###   ########.fr       */
+/*   Updated: 2024/04/26 15:31:56 by haghbal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,9 +46,9 @@ void	push_b_to_a(t_node **stack_a, t_node **stack_b)
 	
 	smallest_node = get_smallest(*stack_b);
 	target_node = (*stack_b)->target_node;
-	if (smallest_node->above_median && smallest_node->target_node->above_median);
+	if (smallest_node->above_median && smallest_node->target_node->above_median)
 		r_lesDeuxB(stack_a, stack_b);
-	if ((!smallest_node->above_median) && !(smallest_node->target_node->above_median))
+	else if ((!smallest_node->above_median) && !(smallest_node->target_node->above_median))
 		rr_lesDeuxB(stack_a, stack_b);
 	prep_for_push(stack_b, smallest_node, 'b');
 	prep_for_push(stack_a, target_node, 'a');

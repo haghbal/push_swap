@@ -6,25 +6,25 @@
 /*   By: haghbal <haghbal@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/12 18:41:36 by haghbal           #+#    #+#             */
-/*   Updated: 2024/03/11 17:52:42 by haghbal          ###   ########.fr       */
+/*   Updated: 2024/04/26 19:23:41 by haghbal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static int	check_nbr(unsigned long r, int s)
+static long	check_nbr(long r, int s)
 {
 	if (r > 9223372036854775807 && s == 1)
 		return (-1);
 	if (r > 9223372036854775807 && s == -1)
 		return (0);
-	return ((int)(r * s));
+	return ((r * s));
 }
 
-int	ft_atoi(const char *str)
+long	ft_atoi(const char *str)
 {
 	int				i;
-	unsigned long	r;
+	long	r;
 	int				s;
 	char			*str2;
 
@@ -43,6 +43,11 @@ int	ft_atoi(const char *str)
 	while (str2[i] >= '0' && str2[i] <= '9')
 	{
 		r = r * 10 + (str2[i] - 48);
+		if ((s > 0 && r - INT_MAX > 0) || r * s + 2147483648 < 0)
+		{
+			write(1, "error: buffer overflow detected\n", 32);
+			exit(1);
+		}
 		i++;
 	}
 	return (check_nbr(r, s));
