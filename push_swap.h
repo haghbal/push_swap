@@ -6,7 +6,7 @@
 /*   By: haghbal <haghbal@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/04 11:21:28 by haghbal           #+#    #+#             */
-/*   Updated: 2024/04/25 22:17:24 by haghbal          ###   ########.fr       */
+/*   Updated: 2024/04/26 22:41:41 by haghbal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,12 +20,6 @@
 #include <limits.h>
 #include "libft/libft.h"
 
-int		check_double_and_sort(int *nbr, int len);
-int		syntax_error(char **arr);
-int		check_arg(char *str);
-int		count_len(char **arr);
-int		*conv_to_nbr(char **str, int count, int *i);
-char	*join_arg(char **arr, int len);
 
 typedef struct s_node{
     int data;
@@ -37,6 +31,13 @@ typedef struct s_node{
     struct s_node *prev;
     struct s_node *next;
 } t_node;
+
+int		check_double_and_sort(int *nbr, int len);
+int		syntax_error(char **arr);
+int		check_arg(char *str);
+int		count_len(char **arr);
+int		*conv_to_nbr(char **str, int count, int *i);
+char	*join_arg(char **arr, int len);
 
 t_node	*stack_init(char **arr);
 t_node	*creat_stack(int *arr, int len);
@@ -50,14 +51,17 @@ int		swap(t_node **stack);
 void	sa(t_node **stack);
 void	sb(t_node *stack);
 void	ss(t_node **stack_a, t_node **stack_b);
+
 int		rotate(t_node **stack);
 void	ra(t_node **stack_a);
 void	rb(t_node **stack_b);
 void	rr(t_node **stack_a, t_node **stack_b);
+
 int		revs_rotate(t_node **stack);
 void	rra(t_node **stack_a);
 void	rrb(t_node **stack_b);
 void	rrr(t_node **stack_a, t_node **stack_b);
+
 void	push(t_node **src, t_node **dest);
 void	pa(t_node **stack_a, t_node **stack_b);
 void	pb(t_node **stack_a, t_node **stack_b);
@@ -65,8 +69,8 @@ void	pb(t_node **stack_a, t_node **stack_b);
 void	sort_three(t_node **stack);
 t_node	*find_max(t_node *stack);
 t_node	*find_min(t_node *stack);
-void	sort_algo(t_node **stack_a, t_node **stack_b);
 
+void	sort_algo(t_node **stack_a, t_node **stack_b);
 void	init_nodes_a(t_node *a, t_node *b);
 void	current_index(t_node *stack);
 void	set_target_a(t_node *a, t_node *b);

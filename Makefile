@@ -1,12 +1,12 @@
 NAME = push_swap
 FLAGS = -Wall -Wextra -Werror -g
-SRCF = main.c syntax_error.c check_double_and_sort.c check_arg.c join_arg.c count_len.c \
-		conv_to_nbr.c creat_stack.c ft_dlstnew.c ft_dlstlast.c ft_dlstadd_front.c \
-		ft_dlstadd_back.c sa.c swap.c sb.c ss.c ft_dlstsize.c rotate.c ra.c \
-		rb.c rra.c rrb.c revs_rotate.c push.c rr.c rrr.c pa.c pb.c sort_three.c \
-		find_max.c find_min.c print_stack.c stack_init.c sort_algo.c current_index.c \
-		set_target_a.c init_nodes_a.c calcule_move.c set_min_cost.c r_lesDeux.c prep_for_push.c \
-		init_nodes_b.c push_a_to_b.c rr_lesDeux.c r_lesDeux.c rr_lesDeuxB.c r_lesDeuxB.c
+SRCF = main.c check_arg.c join_arg.c count_len.c \
+		ft_dlstnew.c ft_dlstlast.c ft_dlstadd_front.c \
+		ft_dlstadd_back.c swap.c ft_dlstsize.c rotate.c \
+		revs_rotate.c push.c sort_three.c \
+		find_min.c print_stack.c stack_init.c sort_algo.c \
+		set_target_a.c init_nodes_a.c r_lesDeux.c\
+		init_nodes_b.c push_a_to_b.c r_lesDeux.c
 LIBDIR = libft
 LIBS = libft/libft.a
 LIBSRC = ft_isalpha.c ft_isdigit.c ft_isalnum.c ft_isascii.c \
@@ -41,7 +41,6 @@ clean:
 	rm -f $(OBJF)
 	make -C $(LIBDIR) clean
 
-# 9 5 1 6 4 7
 fclean: clean
 	rm -f $(NAME)
 	make -C $(LIBDIR) fclean

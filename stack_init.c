@@ -6,11 +6,87 @@
 /*   By: haghbal <haghbal@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/29 14:47:26 by haghbal           #+#    #+#             */
-/*   Updated: 2024/03/29 15:35:27 by haghbal          ###   ########.fr       */
+/*   Updated: 2024/04/26 22:50:07 by haghbal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
+
+int	syntax_error(char **arr)
+{
+	int	i;
+
+	i = 0;
+	while (arr[i])
+	{
+		if (check_arg(arr[i]))
+			return (1);
+		i++;
+	}
+	return (0);
+}
+
+int	*conv_to_nbr(char **str, int count, int *i)
+{
+	int *arr;
+	long	nbr;
+
+	arr = malloc(count * sizeof(int));
+	if (arr == NULL)
+		exit(1);
+	while (str[*i])
+	{
+		nbr = ft_atoi(str[*i]);
+		if (nbr > INT_MAX || nbr < INT_MIN)
+		{
+			write(1, "eroor max", 9);
+			exit(1);
+		}
+		arr[*i] = nbr;
+		(*i)++;
+	}
+	return (arr);
+}
+int	check_double_and_sort(int *nbr, int len)
+{
+	int 	i;
+	int 	j;
+	bool	flag;
+
+	i = 0;
+	flag = false;
+	while (i < len - 1)
+	{
+		j = i + 1;
+		while (j < len)
+		{
+			if (nbr[i] == nbr[j])
+				return (1);
+			if (nbr[i] > nbr[j])
+				flag = true;
+			j++;
+		}
+		i++;
+	}
+	if (flag == false)
+		return(1);
+	return (0);
+}
+
+t_node  *creat_stack(int *arr, int len)
+{
+	int i;
+	t_node	*head;
+
+    i = 0;
+	head = NULL;
+	while (i < len)
+	{
+		ft_dlstadd_back(&head, ft_dlstnew(&arr[i]));
+		i++;
+	}
+	return (head);
+}
 
 t_node  *stack_init(char **arr)
 {

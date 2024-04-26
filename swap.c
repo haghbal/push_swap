@@ -6,7 +6,7 @@
 /*   By: haghbal <haghbal@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/16 13:58:17 by haghbal           #+#    #+#             */
-/*   Updated: 2024/04/24 11:16:23 by haghbal          ###   ########.fr       */
+/*   Updated: 2024/04/26 22:54:10 by haghbal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,4 +30,27 @@ int swap(t_node **stack)
 	next->data = tmp_data;
 	next->index = tmp_index;
 	return (0); 
+}
+
+void	sa(t_node **stack)
+{
+	if (swap(stack) == -1)
+		return ;
+	ft_putstr_fd("sa\n", 1);
+	return ;
+}
+
+void	sb(t_node *stack)
+{
+	if (swap(&stack) == -1)
+		return ;
+	ft_putendl_fd("sb\n", 1);
+	return ;
+}
+
+void	ss(t_node **stack_a, t_node **stack_b)
+{
+	swap(stack_a);
+	swap(stack_b);
+	ft_putstr_fd("ss\n", 1);
 }
