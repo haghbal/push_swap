@@ -1,25 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   print_stack.c                                      :+:      :+:    :+:   */
+/*   free_arr.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: haghbal <haghbal@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/03/27 15:29:24 by haghbal           #+#    #+#             */
-/*   Updated: 2024/04/24 17:04:46 by haghbal          ###   ########.fr       */
+/*   Created: 2024/04/27 14:21:55 by haghbal           #+#    #+#             */
+/*   Updated: 2024/04/27 18:30:47 by haghbal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	print_stack(t_node *stack, char c)
+void    free_arr(char **tab)
 {
-	printf("stack %c ----\n", c);
-	while(stack)
+    int	i;
+
+	i = 0;
+	if (tab == NULL || *tab == NULL)
+		return ;
+	while (tab[i])
 	{
-		printf("DATA:%d-INDX:%d-PC:%d-MC:%d-ABOV:%d\n", stack->data, stack->index, stack->push_cost,
-		 stack->min_cost, stack->above_median);
-		stack = stack->next;
+		free(tab[i]);
+		i++;
 	}
-	puts("-------------------");
+	free(tab);
 }

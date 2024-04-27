@@ -1,30 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_atoi.c                                          :+:      :+:    :+:   */
+/*   ft_atol.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: haghbal <haghbal@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/12 18:41:36 by haghbal           #+#    #+#             */
-/*   Updated: 2024/04/27 20:12:51 by haghbal          ###   ########.fr       */
+/*   Created: 2024/04/27 18:08:36 by haghbal           #+#    #+#             */
+/*   Updated: 2024/04/27 18:22:24 by haghbal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "push_swap.h"
 
-static int	check_nbr(unsigned long r, int s)
-{
-	if (r > 9223372036854775807 && s == 1)
-		return (-1);
-	if (r > 9223372036854775807 && s == -1)
-		return (0);
-	return ((int)(r * s));
-}
-
-int	ft_atoi(const char *str)
+long	ft_atol(const char *str)
 {
 	int				i;
-	unsigned long	r;
+	long	r;
 	int				s;
 	char			*str2;
 
@@ -43,7 +34,12 @@ int	ft_atoi(const char *str)
 	while (str2[i] >= '0' && str2[i] <= '9')
 	{
 		r = r * 10 + (str2[i] - 48);
+		if ((s > 0 && r - INT_MAX > 0) || r * s + 2147483648 < 0)
+		{
+			write(1, "error: over range detected\n", 27);
+			return (2147483648);
+		}
 		i++;
 	}
-	return (check_nbr(r, s));
+	return (r * s);
 }

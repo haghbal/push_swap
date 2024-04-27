@@ -1,10 +1,10 @@
 NAME = push_swap
 FLAGS = -Wall -Wextra -Werror -g
-SRCF = main.c check_arg.c join_arg.c count_len.c \
+SRCF = main.c check_arg.c join_arg.c count_len.c ft_atol.c \
 		ft_dlstnew.c ft_dlstlast.c ft_dlstadd_front.c \
 		ft_dlstadd_back.c swap.c ft_dlstsize.c rotate.c \
-		revs_rotate.c push.c sort_three.c \
-		find_min.c print_stack.c stack_init.c sort_algo.c \
+		revs_rotate.c push.c sort_three.c free_arr.c \
+		find_min.c stack_init.c sort_algo.c \
 		set_target_a.c init_nodes_a.c r_lesDeux.c\
 		init_nodes_b.c push_a_to_b.c r_lesDeux.c
 LIBDIR = libft

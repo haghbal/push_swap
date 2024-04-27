@@ -5,7 +5,7 @@ RED="\033[91m"
 
 from=-9999
 to=9999
-quantity=500
+quantity=100
 
 while true
 do

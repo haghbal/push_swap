@@ -6,7 +6,7 @@
 /*   By: haghbal <haghbal@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/29 14:47:26 by haghbal           #+#    #+#             */
-/*   Updated: 2024/04/26 22:50:07 by haghbal          ###   ########.fr       */
+/*   Updated: 2024/04/27 18:22:46 by haghbal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,12 +36,13 @@ int	*conv_to_nbr(char **str, int count, int *i)
 		exit(1);
 	while (str[*i])
 	{
-		nbr = ft_atoi(str[*i]);
-		if (nbr > INT_MAX || nbr < INT_MIN)
+		nbr = ft_atol(str[*i]);
+		if (nbr == 2147483648)
 		{
-			write(1, "eroor max", 9);
+			free(arr);
 			exit(1);
 		}
+			
 		arr[*i] = nbr;
 		(*i)++;
 	}
@@ -98,13 +99,16 @@ t_node  *stack_init(char **arr)
     
     num = join_arg(arr, count_len(arr));
     split_num = ft_split(num, ' ');
+	free(num);
     if (syntax_error(split_num))
 	{
+		free_arr(split_num);
     	write(2, "syntax error", 12);
 		exit(1);
 	}
     i = 0;
     int_arr = conv_to_nbr(split_num, count_len(arr), &i);
+	free_arr(split_num);
     if (check_double_and_sort(int_arr, i))
     {
     	free(int_arr);

@@ -6,11 +6,24 @@
 /*   By: haghbal <haghbal@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/29 14:37:03 by haghbal           #+#    #+#             */
-/*   Updated: 2024/04/26 23:01:27 by haghbal          ###   ########.fr       */
+/*   Updated: 2024/04/27 18:34:21 by haghbal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
+
+// int	check_sort(t_node *stack)
+// {
+// 	if (!stack)
+// 		return (0);
+// 	while(stack->next)
+// 	{
+// 		if ((stack->data) > (stack->next->data))
+// 			return (0);
+// 		stack = stack->next;
+// 	}
+// 	return (1);
+// }
 
 void	sort_algo(t_node **stack_a, t_node **stack_b)
 {

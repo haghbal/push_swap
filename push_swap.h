@@ -6,7 +6,7 @@
 /*   By: haghbal <haghbal@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/04 11:21:28 by haghbal           #+#    #+#             */
-/*   Updated: 2024/04/26 22:41:41 by haghbal          ###   ########.fr       */
+/*   Updated: 2024/04/27 18:11:01 by haghbal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,6 +70,8 @@ void	sort_three(t_node **stack);
 t_node	*find_max(t_node *stack);
 t_node	*find_min(t_node *stack);
 
+int	check_sort(t_node *stack);
+
 void	sort_algo(t_node **stack_a, t_node **stack_b);
 void	init_nodes_a(t_node *a, t_node *b);
 void	current_index(t_node *stack);
@@ -83,6 +85,7 @@ void	set_target_b(t_node *a, t_node *b);
 void    r_lesDeux(t_node **a, t_node **b);
 void	rr_lesDeux(t_node **a, t_node **b);
 void	prep_for_push(t_node **stack, t_node *smallest_node, char stack_name);
+long	ft_atol(const char *str);
 
 void	push_b_to_a(t_node **stack_a, t_node **stack_b);
 void	min_on_top(t_node **stack);
@@ -90,7 +93,8 @@ void	min_on_top(t_node **stack);
 void	rr_lesDeuxB(t_node **a, t_node **b);
 void    r_lesDeuxB(t_node **a, t_node **b);
 
-
+void	free_stack(t_node **stack);
+void    free_arr(char **tab);
 
 void	print_stack(t_node *stack, char c);
 
