@@ -6,7 +6,7 @@
 /*   By: haghbal <haghbal@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/27 18:08:36 by haghbal           #+#    #+#             */
-/*   Updated: 2024/04/27 18:22:24 by haghbal          ###   ########.fr       */
+/*   Updated: 2024/04/27 20:41:36 by haghbal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,7 @@ long	ft_atol(const char *str)
 		r = r * 10 + (str2[i] - 48);
 		if ((s > 0 && r - INT_MAX > 0) || r * s + 2147483648 < 0)
 		{
-			write(1, "error: over range detected\n", 27);
+			write(1, "Error\n", 6);
 			return (2147483648);
 		}
 		i++;

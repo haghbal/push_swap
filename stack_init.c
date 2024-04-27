@@ -6,7 +6,7 @@
 /*   By: haghbal <haghbal@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/29 14:47:26 by haghbal           #+#    #+#             */
-/*   Updated: 2024/04/27 18:22:46 by haghbal          ###   ########.fr       */
+/*   Updated: 2024/04/27 20:36:36 by haghbal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -91,7 +91,7 @@ t_node  *creat_stack(int *arr, int len)
 
 t_node  *stack_init(char **arr)
 {
-    int		i;
+    int		len;
     char	*num;
 	int		*int_arr;
 	char	**split_num;
@@ -103,17 +103,18 @@ t_node  *stack_init(char **arr)
     if (syntax_error(split_num))
 	{
 		free_arr(split_num);
-    	write(2, "syntax error", 12);
+    	write(2, "Error\n", 6);
 		exit(1);
 	}
-    i = 0;
-    int_arr = conv_to_nbr(split_num, count_len(arr), &i);
+    len = 0;
+    int_arr = conv_to_nbr(split_num, count_len(arr), &len);
 	free_arr(split_num);
-    if (check_double_and_sort(int_arr, i))
+    if (check_double_and_sort(int_arr, len))
     {
     	free(int_arr);
+		write(1, "Error\n", 6);
     	exit(1);
     }
-	stack_a = creat_stack(int_arr, i);
+	stack_a = creat_stack(int_arr, len);
     return (stack_a);
 }
