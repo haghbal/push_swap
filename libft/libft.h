@@ -6,7 +6,7 @@
 /*   By: haghbal <haghbal@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/02 19:09:11 by haghbal           #+#    #+#             */
-/*   Updated: 2024/04/27 20:39:57 by haghbal          ###   ########.fr       */
+/*   Updated: 2024/04/29 14:43:31 by haghbal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,13 +17,11 @@
 # include <stdlib.h>
 # include <limits.h>
 
-
 typedef struct s_list
 {
 	void			*content;
 	struct s_list	*next;
 }					t_list;
-
 
 int		ft_isalpha(int c);
 int		ft_isdigit(int c);

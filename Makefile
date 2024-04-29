@@ -1,12 +1,10 @@
 NAME = push_swap
-FLAGS = -Wall -Wextra -Werror -g
+FLAGS = -Wall -Wextra -Werror
 SRCF = main.c check_arg.c join_arg.c count_len.c ft_atol.c \
-		ft_dlstnew.c ft_dlstlast.c ft_dlstadd_front.c \
-		ft_dlstadd_back.c swap.c ft_dlstsize.c rotate.c \
-		revs_rotate.c push.c sort_three.c free_arr.c \
-		find_min.c stack_init.c sort_algo.c \
-		set_target_a.c init_nodes_a.c r_lesDeux.c\
-		init_nodes_b.c push_a_to_b.c r_lesDeux.c
+		dlist_function.c swap.c rotate.c free_arr.c \
+		revs_rotate.c push.c sort_three.c r_lesDeux.c \
+		find_min.c stack_init.c sort_algo.c push_a_to_b.c \
+		set_target_a.c init_nodes_a.c init_nodes_b.c 
 LIBDIR = libft
 LIBS = libft/libft.a
 LIBSRC = ft_isalpha.c ft_isdigit.c ft_isalnum.c ft_isascii.c \
@@ -36,7 +34,7 @@ $(NAME): $(OBJF) $(LIBS)
 
 %.o:%.c $(HEADERS)
 	cc $(FLAGS) -c $< -o $@
-
+	
 clean:
 	rm -f $(OBJF)
 	make -C $(LIBDIR) clean

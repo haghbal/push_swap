@@ -6,7 +6,7 @@
 /*   By: haghbal <haghbal@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/18 13:40:22 by haghbal           #+#    #+#             */
-/*   Updated: 2024/04/26 22:57:23 by haghbal          ###   ########.fr       */
+/*   Updated: 2024/04/29 13:40:13 by haghbal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,11 +14,11 @@
 
 int	rotate(t_node **stack)
 {
-	if (!(*stack) || !(*stack)->next)
-		return (0);
 	t_node	*head;
 	t_node	*last;
-	
+
+	if (!(*stack) || !(*stack)->next)
+		return (0);
 	if (ft_dlstsize(*stack) < 2)
 		return (-1);
 	head = (*stack);
@@ -35,7 +35,7 @@ void	ra(t_node **stack_a)
 {
 	if (rotate(stack_a) == -1)
 		return ;
-	ft_putstr_fd("ra\n", 1);	
+	ft_putstr_fd("ra\n", 1);
 }
 
 void	rb(t_node **stack_b)

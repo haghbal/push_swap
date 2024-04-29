@@ -6,31 +6,30 @@
 /*   By: haghbal <haghbal@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/04 11:21:28 by haghbal           #+#    #+#             */
-/*   Updated: 2024/04/27 18:11:01 by haghbal          ###   ########.fr       */
+/*   Updated: 2024/04/29 17:27:59 by haghbal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PUSH_SWAP
-# define PUSH_SWAP
+#ifndef PUSH_SWAP_H
+# define PUSH_SWAP_H
 
 # include <stdlib.h>
 # include <unistd.h>
 # include <stdbool.h>
-#include <stdio.h>
-#include <limits.h>
-#include "libft/libft.h"
+# include <limits.h>
+# include "libft/libft.h"
 
-
-typedef struct s_node{
-    int data;
-    int index;
-    int	push_cost;
-    bool	above_median;
-    bool	min_cost;
-    struct s_node *target_node;
-    struct s_node *prev;
-    struct s_node *next;
-} t_node;
+typedef struct s_node
+{
+	int				data;
+	int				index;
+	int				push_cost;
+	bool			above_median;
+	bool			min_cost;
+	struct s_node	*target_node;
+	struct s_node	*prev;
+	struct s_node	*next;
+}	t_node;
 
 int		check_double_and_sort(int *nbr, int len);
 int		syntax_error(char **arr);
@@ -70,8 +69,6 @@ void	sort_three(t_node **stack);
 t_node	*find_max(t_node *stack);
 t_node	*find_min(t_node *stack);
 
-int	check_sort(t_node *stack);
-
 void	sort_algo(t_node **stack_a, t_node **stack_b);
 void	init_nodes_a(t_node *a, t_node *b);
 void	current_index(t_node *stack);
@@ -82,21 +79,18 @@ void	set_min_cost(t_node *stack);
 void	init_nodes_b(t_node *a, t_node *b);
 void	push_a_to_b(t_node **a, t_node **b);
 void	set_target_b(t_node *a, t_node *b);
-void    r_lesDeux(t_node **a, t_node **b);
-void	rr_lesDeux(t_node **a, t_node **b);
+void	r_lesdeux(t_node **a, t_node **b);
+void	rr_lesdeux(t_node **a, t_node **b);
 void	prep_for_push(t_node **stack, t_node *smallest_node, char stack_name);
 long	ft_atol(const char *str);
 
 void	push_b_to_a(t_node **stack_a, t_node **stack_b);
 void	min_on_top(t_node **stack);
 
-void	rr_lesDeuxB(t_node **a, t_node **b);
-void    r_lesDeuxB(t_node **a, t_node **b);
+void	rr_lesdeux_b(t_node **a, t_node **b);
+void	r_lesdeux_b(t_node **a, t_node **b);
 
 void	free_stack(t_node **stack);
-void    free_arr(char **tab);
-
-void	print_stack(t_node *stack, char c);
-
+void	free_arr(char **tab);
 
 #endif

@@ -6,7 +6,7 @@
 /*   By: haghbal <haghbal@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/29 23:23:35 by haghbal           #+#    #+#             */
-/*   Updated: 2024/04/25 16:25:53 by haghbal          ###   ########.fr       */
+/*   Updated: 2024/04/29 17:16:44 by haghbal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,7 +44,7 @@ void	set_target_b(t_node *a, t_node *b)
 	t_node	*target_node;
 	t_node	*current_a;
 	long	best_node;
-	
+
 	while (b)
 	{
 		best_node = LONG_MAX;

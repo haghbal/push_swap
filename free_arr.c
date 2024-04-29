@@ -6,15 +6,15 @@
 /*   By: haghbal <haghbal@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/27 14:21:55 by haghbal           #+#    #+#             */
-/*   Updated: 2024/04/27 18:30:47 by haghbal          ###   ########.fr       */
+/*   Updated: 2024/04/29 13:05:29 by haghbal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void    free_arr(char **tab)
+void	free_arr(char **tab)
 {
-    int	i;
+	int	i;
 
 	i = 0;
 	if (tab == NULL || *tab == NULL)

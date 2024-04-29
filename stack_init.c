@@ -6,7 +6,7 @@
 /*   By: haghbal <haghbal@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/29 14:47:26 by haghbal           #+#    #+#             */
-/*   Updated: 2024/04/27 20:36:36 by haghbal          ###   ########.fr       */
+/*   Updated: 2024/04/29 12:58:59 by haghbal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,33 +26,11 @@ int	syntax_error(char **arr)
 	return (0);
 }
 
-int	*conv_to_nbr(char **str, int count, int *i)
-{
-	int *arr;
-	long	nbr;
-
-	arr = malloc(count * sizeof(int));
-	if (arr == NULL)
-		exit(1);
-	while (str[*i])
-	{
-		nbr = ft_atol(str[*i]);
-		if (nbr == 2147483648)
-		{
-			free(arr);
-			exit(1);
-		}
-			
-		arr[*i] = nbr;
-		(*i)++;
-	}
-	return (arr);
-}
 int	check_double_and_sort(int *nbr, int len)
 {
-	int 	i;
-	int 	j;
-	bool	flag;
+	int		i;
+	int		j;
+	bool	flag;	
 
 	i = 0;
 	flag = false;
@@ -70,16 +48,16 @@ int	check_double_and_sort(int *nbr, int len)
 		i++;
 	}
 	if (flag == false)
-		return(1);
+		return (1);
 	return (0);
 }
 
-t_node  *creat_stack(int *arr, int len)
+t_node	*creat_stack(int *arr, int len)
 {
-	int i;
+	int		i;
 	t_node	*head;
 
-    i = 0;
+	i = 0;
 	head = NULL;
 	while (i < len)
 	{
@@ -89,32 +67,35 @@ t_node  *creat_stack(int *arr, int len)
 	return (head);
 }
 
-t_node  *stack_init(char **arr)
+void	free_function(int *arr)
 {
-    int		len;
-    char	*num;
+	free(arr);
+	write(2, "Error\n", 6);
+	exit(1);
+}
+
+t_node	*stack_init(char **arr)
+{
+	int		len;
+	char	*num;
 	int		*int_arr;
 	char	**split_num;
 	t_node	*stack_a;
-    
-    num = join_arg(arr, count_len(arr));
-    split_num = ft_split(num, ' ');
+
+	num = join_arg(arr, count_len(arr));
+	split_num = ft_split(num, ' ');
 	free(num);
-    if (syntax_error(split_num))
+	if (syntax_error(split_num))
 	{
 		free_arr(split_num);
-    	write(2, "Error\n", 6);
+		write(2, "Error\n", 6);
 		exit(1);
 	}
-    len = 0;
-    int_arr = conv_to_nbr(split_num, count_len(arr), &len);
+	len = 0;
+	int_arr = conv_to_nbr(split_num, count_len(arr), &len);
 	free_arr(split_num);
-    if (check_double_and_sort(int_arr, len))
-    {
-    	free(int_arr);
-		write(1, "Error\n", 6);
-    	exit(1);
-    }
+	if (check_double_and_sort(int_arr, len))
+		free_function(int_arr);
 	stack_a = creat_stack(int_arr, len);
-    return (stack_a);
+	return (stack_a);
 }

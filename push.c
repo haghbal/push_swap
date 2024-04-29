@@ -6,24 +6,24 @@
 /*   By: haghbal <haghbal@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/17 22:14:53 by haghbal           #+#    #+#             */
-/*   Updated: 2024/04/26 23:03:13 by haghbal          ###   ########.fr       */
+/*   Updated: 2024/04/29 13:30:13 by haghbal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void    push(t_node **src, t_node **dest)
+void	push(t_node **src, t_node **dest)
 {
-    t_node  *head;
+	t_node	*head;
 
-    if (!(*src))
-        return ;
-    head = *src;
-    (*src) = (*src)->next;
-    head->next = NULL;
-    ft_dlstadd_front(dest, head);
-    if (*src)
-        (*src)->prev = NULL;
+	if (!(*src))
+		return ;
+	head = *src;
+	(*src) = (*src)->next;
+	head->next = NULL;
+	ft_dlstadd_front(dest, head);
+	if (*src)
+		(*src)->prev = NULL;
 }
 
 void	pa(t_node **stack_a, t_node **stack_b)

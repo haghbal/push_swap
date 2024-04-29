@@ -6,38 +6,36 @@
 /*   By: haghbal <haghbal@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/29 14:37:03 by haghbal           #+#    #+#             */
-/*   Updated: 2024/04/27 18:34:21 by haghbal          ###   ########.fr       */
+/*   Updated: 2024/04/29 11:51:28 by haghbal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-// int	check_sort(t_node *stack)
-// {
-// 	if (!stack)
-// 		return (0);
-// 	while(stack->next)
-// 	{
-// 		if ((stack->data) > (stack->next->data))
-// 			return (0);
-// 		stack = stack->next;
-// 	}
-// 	return (1);
-// }
-
-void	sort_algo(t_node **stack_a, t_node **stack_b)
+static int	first_push(t_node **stack_a, t_node **stack_b)
 {
-    int	len_a;
+	int	len_a;
+
 	len_a = ft_dlstsize(*stack_a);
-	if (len_a > 4){
+	if (len_a > 4)
+	{
 		pb(stack_a, stack_b);
 		pb(stack_a, stack_b);
 		len_a -= 2;
 	}
-	else if (len_a > 3){
+	else if (len_a > 3)
+	{
 		pb(stack_a, stack_b);
 		len_a--;
 	}
+	return (len_a);
+}
+
+void	sort_algo(t_node **stack_a, t_node **stack_b)
+{
+	int	len_a;
+
+	len_a = first_push(stack_a, stack_b);
 	while (len_a-- > 3)
 	{
 		init_nodes_a(*stack_a, *stack_b);

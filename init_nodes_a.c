@@ -6,7 +6,7 @@
 /*   By: haghbal <haghbal@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/29 23:10:09 by haghbal           #+#    #+#             */
-/*   Updated: 2024/04/26 23:05:56 by haghbal          ###   ########.fr       */
+/*   Updated: 2024/04/29 13:48:48 by haghbal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 
 void	current_index(t_node *stack)
 {
-	int i;
-	int median;
+	int	i;
+	int	median;
 
 	i = 0;
 	if (stack == NULL)
@@ -33,40 +33,42 @@ void	current_index(t_node *stack)
 	}
 }
 
-int reduct_move(int a_index, int b_index)
+int	reduct_move(int a_index, int b_index)
 {
-    if (a_index > b_index)
-        return (a_index);
-    else
-        return(b_index);
+	if (a_index > b_index)
+		return (a_index);
+	else
+		return (b_index);
 }
 
 void	calcule_move(t_node *a, t_node *b)
 {
-    int	len_a;
+	int	len_a;
 	int	len_b;
-	
+	int	index_target;
+
 	len_a = ft_dlstsize(a);
 	len_b = ft_dlstsize(b);
-    while (a)
-    {
-	    if (a->above_median && a->target_node->above_median)
-            a->push_cost = reduct_move(a->index, a->target_node->index);
-        else if (!(a->above_median) && !(a->target_node->above_median))
-            a->push_cost = reduct_move(len_a - a->index, len_b - a->target_node->index);
-        else if (a->above_median && !(a->target_node->above_median))
-            a->push_cost = a->index + len_b - a->target_node->index;
-        else if (!(a->above_median) && a->target_node->above_median)
-            a->push_cost = len_a - a->index + a->target_node->index;
+	while (a)
+	{
+		index_target = a->target_node->index;
+		if (a->above_median && a->target_node->above_median)
+			a->push_cost = reduct_move(a->index, a->target_node->index);
+		else if (!(a->above_median) && !(a->target_node->above_median))
+			a->push_cost = reduct_move(len_a - a->index, len_b - index_target);
+		else if (a->above_median && !(a->target_node->above_median))
+			a->push_cost = a->index + len_b - a->target_node->index;
+		else if (!(a->above_median) && a->target_node->above_median)
+			a->push_cost = len_a - a->index + a->target_node->index;
 		a = a->next;
-    }
+	}
 }
 
 void	set_min_cost(t_node *stack)
 {
 	long	cost_value;
 	t_node	*min_cost_node;
-	
+
 	if (!stack)
 		return ;
 	min_cost_node = stack;

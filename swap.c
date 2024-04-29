@@ -6,15 +6,15 @@
 /*   By: haghbal <haghbal@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/16 13:58:17 by haghbal           #+#    #+#             */
-/*   Updated: 2024/04/26 22:54:10 by haghbal          ###   ########.fr       */
+/*   Updated: 2024/04/29 13:44:04 by haghbal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int swap(t_node **stack)
+int	swap(t_node **stack)
 {
-    t_node	*head;
+	t_node	*head;
 	t_node	*next;
 	int		tmp_data;
 	int		tmp_index;
@@ -29,7 +29,7 @@ int swap(t_node **stack)
 	head->index = next->index;
 	next->data = tmp_data;
 	next->index = tmp_index;
-	return (0); 
+	return (0);
 }
 
 void	sa(t_node **stack)

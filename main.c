@@ -6,18 +6,11 @@
 /*   By: haghbal <haghbal@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/04 18:04:00 by haghbal           #+#    #+#             */
-/*   Updated: 2024/04/27 18:13:54 by haghbal          ###   ########.fr       */
+/*   Updated: 2024/04/29 17:47:57 by haghbal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
-#include <stdio.h>
 #include "push_swap.h"
-#include <stdio.h>
-
-void f(void){
-	system("leaks push_swap");
-}
 
 void	free_stack(t_node **stack)
 {
@@ -36,13 +29,12 @@ void	free_stack(t_node **stack)
 	*stack = NULL;
 }
 
-int main(int ac, char **av)
+int	main(int ac, char **av)
 {
-	// atexit(f);
-	int len;
+	int		len;
 	t_node	*stack_a;
 	t_node	*stack_b;
-	
+
 	stack_a = NULL;
 	stack_b = NULL;
 	if (ac == 1 || (ac == 2 && av[1][0] == '\0'))
@@ -53,11 +45,11 @@ int main(int ac, char **av)
 		len = ft_dlstsize(stack_a);
 		if (len == 2)
 			sa(&stack_a);
-    	else if (len == 3)
-        	sort_three(&stack_a);
-    	else if (len > 3)
-       		sort_algo(&stack_a, &stack_b);
+		else if (len == 3)
+			sort_three(&stack_a);
+		else if (len > 3)
+			sort_algo(&stack_a, &stack_b);
 	}
 	free_stack(&stack_a);
-    return (0);
+	return (0);
 }

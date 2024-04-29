@@ -6,7 +6,7 @@
 /*   By: haghbal <haghbal@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/09 10:37:59 by haghbal           #+#    #+#             */
-/*   Updated: 2024/03/23 16:43:32 by haghbal          ###   ########.fr       */
+/*   Updated: 2024/04/29 13:00:11 by haghbal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 
 int	check_double_and_sort(int *nbr, int len)
 {
-	int 	i;
-	int 	j;
+	int		i;
+	int		j;
 	bool	flag;
 
 	i = 0;
@@ -34,6 +34,6 @@ int	check_double_and_sort(int *nbr, int len)
 		i++;
 	}
 	if (flag == false)
-		return(1);
+		return (1);
 	return (0);
 }

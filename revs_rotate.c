@@ -6,44 +6,36 @@
 /*   By: haghbal <haghbal@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/18 14:01:28 by haghbal           #+#    #+#             */
-/*   Updated: 2024/04/26 23:00:14 by haghbal          ###   ########.fr       */
+/*   Updated: 2024/04/29 13:38:56 by haghbal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int revs_rotate(t_node **stack)
+int	revs_rotate(t_node **stack)
 {
-    t_node  *head;
-    t_node *last;
+	t_node	*head;
+	t_node	*last;
 
-    if (!stack || !*stack || !(*stack)->next)
-        return (-1) ;
-    head = (*stack);
-    last = ft_dlstlast(*stack);
-    last->prev->next = NULL;
-    last->prev = NULL;
-    last->next = head;
-    head->prev = last;
-    (*stack) = last;
-    
-    // if (!last->prev)
-    // {
-    //     printf("%d\n", last->data);
-    //     // printf("%p\n", last->prev);
-    // }
-    // last->prev->next = NULL;
-    // last->prev = NULL;
-    // last->next = head;
-    // (*stack) = last;
-    return (0);
+	if (!stack || !*stack || !(*stack)->next)
+		return (-1);
+	head = (*stack);
+	last = ft_dlstlast(*stack);
+	last->prev->next = NULL;
+	last->prev = NULL;
+	last->next = head;
+	head->prev = last;
+	(*stack) = last;
+	return (0);
 }
+
 void	rra(t_node **stack_a)
 {
 	if (revs_rotate(stack_a) == -1)
 		return ;
 	ft_putstr_fd("rra\n", 1);
 }
+
 void	rrb(t_node **stack_b)
 {
 	if (revs_rotate(stack_b) == -1)
