@@ -26,30 +26,46 @@ int	syntax_error(char **arr)
 	return (0);
 }
 
+// int	check_double_and_sort(int *nbr, int len)
+// {
+// 	int		i;
+// 	int		j;
+// 	bool	flag;	
+
+// 	i = 0;
+// 	flag = false;
+// 	while (i < len - 1)
+// 	{
+// 		j = i + 1;
+// 		while (j < len)
+// 		{
+// 			if (nbr[i] == nbr[j])
+// 				return (1);
+// 			if (nbr[i] > nbr[j])
+// 				flag = true;
+// 			j++;
+// 		}
+// 		i++;
+// 	}
+// 	if (flag == false)
+// 		return (1);
+// 	return (0);
+// }
+
 int	check_double_and_sort(int *nbr, int len)
 {
-	int		i;
-	int		j;
-	bool	flag;	
+	int	i;
+	int j;
 
 	i = 0;
-	flag = false;
 	while (i < len - 1)
 	{
 		j = i + 1;
-		while (j < len)
-		{
-			if (nbr[i] == nbr[j])
-				return (1);
-			if (nbr[i] > nbr[j])
-				flag = true;
-			j++;
-		}
+		if(nbr[i] > nbr[j])
+		return (0);
 		i++;
 	}
-	if (flag == false)
-		return (1);
-	return (0);
+	return (1);
 }
 
 t_node	*creat_stack(int *arr, int len)
@@ -70,9 +86,15 @@ t_node	*creat_stack(int *arr, int len)
 void	free_function(int *arr)
 {
 	free(arr);
-	write(2, "Error\n", 6);
 	exit(1);
 }
+
+// void	free_function(int *arr)
+// {
+// 	free(arr);
+// 	write(2, "Error\n", 6);
+// 	exit(1);
+// }
 
 t_node	*stack_init(char **arr)
 {
